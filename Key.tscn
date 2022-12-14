@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/keyAnim/key_0002_Layer 46.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/keyAnim/key_0009_Layer 6.jpg" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/keyAnim/key_0004_Layer 36.jpg" type="Texture" id=9]
 [ext_resource path="res://assets/keyAnim/key_0008_Layer 11.jpg" type="Texture" id=10]
 [ext_resource path="res://assets/keyAnim/key_0007_Layer 16.jpg" type="Texture" id=11]
+[ext_resource path="res://scripts/Key.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -25,10 +26,20 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=2]
+
 [node name="Key" type="Area2D"]
+collision_layer = 16
+script = ExtResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3, 0 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 2
+frame = 7
 playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="." to="." method="_on_Key_area_entered"]

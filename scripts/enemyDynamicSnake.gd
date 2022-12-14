@@ -41,7 +41,7 @@ func move(d):
 			direction = "x"
 		
 	
-	print(V)
+	#print(V)
 
 
 func _on_enemyDynamic3_area_entered(area):

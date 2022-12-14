@@ -17,6 +17,7 @@ config/icon="res://assets/icon.png"
 [autoload]
 
 GlobalScript="*res://scripts/globalScript.gd"
+PlayerData="*res://scripts/playerData.gd"
 
 [display]
 
@@ -67,6 +68,11 @@ GAME_EXIT={
 2d_render/layer_2="enemy"
 2d_render/layer_3="walls"
 2d_render/layer_4="utility"
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="walls"
+2d_physics/layer_4="utility"
+2d_physics/layer_5="pickups"
 
 [physics]
 
